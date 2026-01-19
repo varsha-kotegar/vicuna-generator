@@ -2,7 +2,7 @@
 
 A fun, interactive web application to customize and generate your own Vicuña character! Built with **Astro** and **Vanilla JavaScript**.
 
-## 🎨 Features
+## Features
 
 - **Layered Customization**: Assemble your Vicuña using stacked SVG layers.
 - **Expressive Poses**: Choose from dramatic body shapes like "Big Head", "Long Neck", "Gamer Pose", and more.
@@ -14,12 +14,12 @@ A fun, interactive web application to customize and generate your own Vicuña ch
     -   Incompatibility logic (e.g., specific hair styles limit accessories).
     -   Keyboard navigation support.
 -   **Actions**:
-    -   🎲 **Randomize**: Generate a unique character instantly.
-    -   ⬇️ **Download**: Export your creation as a high-quality 1000x1000 PNG.
-    -   🔄 **Reset**: Return to the default state.
+    -   **Randomize**: Generate a unique character instantly.
+    -   **Download**: Export your creation as a high-quality 1000x1000 PNG.
+    -   **Reset**: Return to the default state.
 -   **Persistence**: Your design is saved automatically to your browser's local storage.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 -   **Framework**: [Astro](https://astro.build) (Minimal template)
 -   **Logic**: Vanilla JavaScript (ES Modules)
@@ -27,7 +27,7 @@ A fun, interactive web application to customize and generate your own Vicuña ch
 -   **Rendering**: DOM manipulation for preview, HTML5 Canvas for export.
 -   **Styling**: Modern CSS (Grid, Flexbox, Variables, Transforms).
 
-## 🚀 Getting Started
+## Getting Started
 
 1.  **Clone the repository**:
     ```sh
@@ -51,7 +51,7 @@ A fun, interactive web application to customize and generate your own Vicuña ch
     npm run build
     ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 /
@@ -68,8 +68,5 @@ A fun, interactive web application to customize and generate your own Vicuña ch
 │       ├── global.css      # Core variables and reset
 │       └── generator.css   # App-specific layout and component styles
 └── package.json
-```
 
-## 📄 License
 
-This project is open-source and available under the [MIT License](LICENSE).
