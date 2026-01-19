@@ -1,0 +1,82 @@
+
+---
+import '../styles/global.css';
+import '../styles/generator.css';
+import { categories } from '../scripts/config.js';
+
+// Sort categories by Z-Index for rendering order
+const renderOrder = [...categories].sort((a, b) => a.zIndex - b.zIndex);
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Vicuña Image Generator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="app-container">
+            <!-- Left Column -->
+            <section class="left-column">
+                <header class="header">
+                    <p class="subtitle">&lt;vicuna-generator&gt;</p>
+                    <h1>Vicuña Generator</h1>
+                </header>
+
+                <div class="vicuna-stage" id="vicuna-stage">
+                    {renderOrder.map(cat => (
+                        <img 
+                            id={`layer-${cat.id}`} 
+                            class="vicuna-layer" 
+                            data-category={cat.id} 
+                            src="" 
+                            alt={cat.label} 
+                            style={`z-index:${cat.zIndex}; display:none;`}
+                        />
+                    ))}
+                </div>
+
+                <div class="actions">
+                    <button id="btn-random" class="btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        Random
+                    </button>
+                    <button id="btn-reset" class="btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 12"></path><path d="M3 3v9h9"></path></svg>
+                        Reset
+                    </button>
+                    <button id="btn-download" class="btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Column -->
+            <section class="right-column">
+                <div class="control-group">
+                    <h3>Categories</h3>
+                    <nav class="category-nav" id="category-nav">
+                        <!-- Categories injected by JS -->
+                    </nav>
+                </div>
+
+                <div class="control-group">
+                    <h3>Style</h3>
+                    <div class="styles-grid" id="styles-grid">
+                        <!-- Styles injected by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            import '../scripts/renderer.js';
+            import '../scripts/controls.js';
+        </script>
+	</body>
+</html>
